@@ -2,7 +2,7 @@
 # Figure3.png — two-panel strip plot across the three arms:
 #   left  = FIDELITY (Jaccard of each run vs the reference cohort; 9 points/arm)
 #   right = REPRODUCIBILITY (pairwise Jaccard between runs within an arm; 36 points/arm)
-# Arm A = human team definitions (ss1) · Arm B = AI runs, original paper (ss2) · Arm C = AI runs, disambiguated (ss3).
+# Arm A = human team definitions (ss1) · Arm B = AI runs, original paper (ss2) · Arm C = AI runs, de-contradicted.
 # One colour per arm. Values computed from the raw co-located cohorts in ../Cohorts (hardcoded here for speed).
 import os as _os; _HERE=_os.path.dirname(_os.path.abspath(__file__))
 import matplotlib; matplotlib.use("Agg")
@@ -25,7 +25,7 @@ PW_B=[0.1898,0.8789,0.1887,0.8752,0.9438,0.8851,0.9479,0.2542,0.2046,0.9755,0.19
 PW_C=[1.0]*36
 
 RED="#c0392b"; BLUE="#1f4e79"; TEAL="#2a9d8f"
-rows=[(1,RED,"Human team definitions\n(Arm A)"),(2,BLUE,"AI runs — original paper\n(Arm B)"),(3,TEAL,"AI runs — disambiguated\n(Arm C)")]
+rows=[(1,RED,"Human team definitions\n(Arm A)"),(2,BLUE,"AI runs — original paper\n(Arm B)"),(3,TEAL,"AI runs — de-contradicted\n(Arm C)")]
 
 def strip(ax, data, jit, title, xlabel, extra_all9=False):
     for (y,c,_),vals in zip(rows,data):

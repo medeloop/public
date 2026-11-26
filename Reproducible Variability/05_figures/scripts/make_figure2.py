@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # Combined 3-panel overlap figure, v2 -> Figure2.png
-#   A = human team definitions · B = AI runs (original paper) · C = AI runs (disambiguated methods)
+#   A = human team definitions · B = AI runs (original paper) · C = AI runs (de-contradicted methods)
 # v2 vs v1: wider bars (less inter-bar gap), tighter inter-panel spacing, and the shared legend
 # moved INTO panel C's empty top-right corner — no reserved right margin, so the whole figure is
 # more compact horizontally and prints larger / more legibly at a fixed journal width.
@@ -50,9 +50,9 @@ panel(axB,[f"Agent {i}" for i in range(1,10)],
       [s-i for s,i in zip(a_sz,a_in)], list(a_in), [MASTER-i for i in a_in],
       [i/(s+MASTER-i) for s,i in zip(a_sz,a_in)], "B", "AI runs — original paper", False)
 
-# Panel C — AI runs, disambiguated methods (all patient-identical to master)
+# Panel C — AI runs, de-contradicted methods (all patient-identical to master)
 panel(axC,[f"Agent {i}" for i in range(1,10)],
-      [0]*9, [MASTER]*9, [0]*9, [1.0]*9, "C", "AI runs — disambiguated methods", False)
+      [0]*9, [MASTER]*9, [0]*9, [1.0]*9, "C", "AI runs — de-contradicted methods", False)
 
 # Shared legend inside panel C's empty top-right corner (white fill masks the gridlines, no border)
 axC.legend(handles=[Patch(fc=YEL,label="Reference cohort only"),Patch(fc=TEAL,label="Both"),

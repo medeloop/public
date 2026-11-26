@@ -1,0 +1,11 @@
+{
+  "_about": "Tabulated source values for Figure 1 of the JAMIA Research and Applications submission. make_figure1.py computes nothing except layout geometry. The remaining figures carry their values inline in their own scripts.",
+  "reference_cohort_n": 17158,
+  "study": {
+    "source_study": "Albogami et al, 2021",
+    "database_patients_million": 35.9,
+    "database_years": "2020 to 2025",
+    "frozen_code_sets": 20,
+    "definitions_total": 27
+  }
+}
